@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<he>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="styles/buku.css">
+    <style>
+        #sidebar {
+            position: absolute;
+            width: 250px;
+            height: 700px;
+            background-color: #9EDDFF;
+            z-index: 1;
+
+        }
+
+        .popup1 button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup1 button:hover {
+            background-color: #45a049;
+        }
+
+        .popup1 .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 400;
+            top: 20px;
+            width: 60%;
+            height: auto;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 1);
+            ;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="file"] {
+            width: "100%";
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .form-book-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-input-buku {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .col-start-2 {
+            grid-column: 2 / -1;
+        }
+    </style>
+    </head>
+
+    <body>
+        <header>
+            <nav class="nav">
+                <div>
+                    <a href="pengaturan.html">
+                        <img src="assets/dashboard/maleprof.png" alt="" class="nav-icon">
+                    </a>
+                </div>
+                <span>Admin</span>
+                <div class="panah bawah" id="popupTrigger"
+                    style="z-index: 3; scale: 0.5; position: absolute; left:1310px; top: 22px; cursor: pointer;">
+                    <img src="assets/dashboard/panahbawah.png" alt="" onclick="togglePopup('popup')">
+                </div>
+                <div id="popup" class="popup" style="position: absolute; left: 1245px; top: 70px;">
+                    <button onclick="redirectToLogin('login.html')">Keluar</button>
+                </div>
+            </nav>
+        </header>
+
+        <section id="sidebar">
+            <div class="img" style="padding: 35px;">
+                <a href="Home.html"><img src="assets/global/logo.png" alt="logo" class="logosma"></a>
+                <div class="namasma">
+                    <h4>SMA NEGERI 12 <br> BANDAR LAMPUNG</h4>
+                </div>
+            </div>
+
+            <div class="kotak1">
+                <a href="dashboard.html" style="text-decoration:none ; width: 30px;">
+                    <img src="assets/dashboard/Speedometer.png" alt="dashboard">
+                    <p>Dashboard</p>
+                </a>
+                <div class="menu-content">
+                    <!-- Konten Dashboard di sini -->
+                </div>
+            </div>
+            <div class="kotak2">
+                <a href="buku.html" style="text-decoration: none; width: 30px;">
+                    <img src="assets/dashboard/Book Shelf.png" alt="buku">
+                    <p>Buku</p>
+                    <div class="menu-content">
+                </a>
+                <!-- Konten Buku di sini -->
+            </div>
+            </div>
+            <div class="kotak3">
+                <a href="vpeminjaman.html" style="text-decoration: none; width: 30px;">
+                    <img src="assets/dashboard/Return Book (1).png" alt="peminjaman">
+                    <p>Peminjaman</p>
+                    <div class="menu-content">
+                </a>
+                <!-- Konten Peminjaman di sini -->
+            </div>
+            </div>
+            <div class="kotak4">
+                <a href="vpengembalian.html" style="text-decoration: none; width: 30px;">
+                    <img src="assets/dashboard/Return Book.png" alt="pengembalian">
+                    <p>Pengembalian</p>
+                </a>
+                <div class="menu-content">
+                    <!-- Konten Pengembalian di sini -->
+                </div>
+            </div>
+            <div class="kotak5">
+                <a href="denda.html" style="text-decoration: none; width: 30px;">
+                    <img src="assets/dashboard/Stack of Coins.png" alt="denda">
+                    <p>Denda</p>
+                </a>
+                <div class="menu-content">
+                    <!-- Konten Denda di sini -->
+                </div>
+            </div>
+            <div class="kotak6">
+                <a href="pengaturan.html" style="text-decoration: none; width: 30px;">
+                    <img src="assets/dashboard/Gear.png" alt="pengaturan">
+                    <p>Pengaturan</p>
+                </a>
+                <div class="menu-content">
+                    <!-- Konten Pengaturan di sini -->
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="content">
+            <main>
+                <div class="head-title">
+                    <div class="left">
+                        <h1>Data Buku</h1>
+                        <ul class="breadcrumb" style="list-style-type: none;">
+                            <li>
+                                <a href="#">Buku</a>
+                            </li>
+                            <li><i class="bx bx-chevron-right"></i></li>
+                            <li>
+                                <a class="active" href=".html">Dashboard</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <button class="modal-button" id="modalBtn"
+                        style="background-color:#027fc2; width: 100px; height: 30px; color: white; border-radius: 10px; border: none; cursor: pointer;">Tambah
+                        Buku</button>
+                    <div id="modal" class="modal">
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <h2>Form Data Buku</h2>
+                            <form id="bookForm" class="form-book-container">
+                                <div class="form-input-buku">
+                                    <label for="bookNumber">Nomor Buku:</label>
+                                    <input type="text" id="bookNumber" name="bookNumber" required>
+                                </div>
+
+                                <div class="form-input-buku">
+                                    <label for="bookTitle">Judul Buku:</label>
+                                    <input type="text" id="bookTitle" name="bookTitle" required>
+                                </div>
+
+                                <div class="form-input-buku">
+                                    <label for="publisher">Penerbit:</label>
+                                    <input type="text" id="publisher" name="publisher" required>
+                                </div>
+
+                                <div class="form-input-buku">
+                                    <label for="author">Pengarang:</label>
+                                    <input type="text" id="author" name="author" required>
+                                </div>
+
+                                <div class="form-input-buku">
+                                    <label for="year">Tahun:</label>
+                                    <input type="text" id="year" name="year" required>
+                                </div>
+
+                                <div class="form-input-buku">
+                                    <label for="category">Kategori:</label>
+                                    <input type="text" id="category" name="category" required>
+                                </div>
+
+                                <div class="form-input-buku">
+                                    <label for="quantity">Jumlah:</label>
+                                    <input type="number" id="quantity" name="quantity" required>
+                                </div>
+
+                                <div class="form-input-buku">
+                                    <label for="cover">Cover Buku:</label>
+                                    <input type="file" id="cover" name="cover" accept="image/*" required>
+                                </div>
+
+
+                                <input type="submit" value="Simpan" class="col-start-2" style="background-color: #027fc2; color: white; ">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="table-data">
+                        <div class="head">
+                            <h3>Daftar Data Buku</h3>
+                            <form action="#" id="src">
+                                <div class="form-input">
+                                    <input type="search" placeholder="search...">
+                                    <button type="submit" class="search-btn"><i class="bx bx-search-alt"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Sampul</th>
+                                    <th>Nomor Buku</th>
+                                    <th>Judul Buku</th>
+                                    <th>Penerbit</th>
+                                    <th>Pengarang</th>
+                                    <th>Tahun</th>
+                                    <th>Kategori</th>
+                                    <th>Jumlah</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <td>1.</td>
+                                <td></td>
+                                <td>0987hh</td>
+                                <td>love</td>
+                                <td>xxx</td>
+                                <td>yyy</td>
+                                <td>2023</td>
+                                <td>fiksi</td>
+                                <td>20</td>
+                                <td> <a href="" class="btn btn-primary btn-sm" style="color: #027fc2;"><i
+                                            class="fa fa-edit"></i></a>
+                                    <button class="btn btn-danger btn-sm" style="color: red;">
+                                        <i class="fa fa-trash"></i></button>
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </main>
+        </section>
+
+
+
+        <script>
+            function togglePopup(popupId) {
+                var popup = document.getElementById(popupId);
+                if (popup.style.display === "block") {
+                    popup.style.display = "none";
+                } else {
+                    popup.style.display = "block";
+                }
+            }
+
+            function redirectToLogin(url) {
+                window.location.href = url;
+            }
+
+            // JavaScript untuk menampilkan dan menyembunyikan modal
+            const modal = document.getElementById('modal');
+            const modalBtn = document.getElementById('modalBtn');
+            const closeBtn = document.querySelector('.close');
+
+            modalBtn.addEventListener('click', () => {
+                modal.style.display = 'block';
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+        </script>
+
+    </body>
+
+</html>

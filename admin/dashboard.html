@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+  />
+    <link rel="stylesheet" href="styles/dashboard.css">
+    <style>
+        #sidebar{
+            position: absolute;
+            width: 250px;
+            height: 700px;
+            background-color: #9EDDFF;
+            z-index: 1;
+            
+        }
+        
+        .popup1 button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .popup1 button:hover {
+            background-color: #45a049;
+        }
+
+        .popup1 .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav" >
+            <div>
+               <a href="pengaturan.html">
+                    <img src="assets/dashboard/maleprof.png" alt="" class="nav-icon">
+                </a>
+            </div>
+            <span>Admin </span>
+            <div class="panah bawah" id="popupTrigger" style="z-index: 3; scale: 0.5; position: absolute; left:1310px; top: 22px; cursor: pointer;">
+                <img src="assets/dashboard/panahbawah.png" alt="" onclick="togglePopup('popup')">
+            </div>
+            <div id="popup" class="popup" style="position: absolute; left: 1245px; top: 70px;">
+                <button onclick="redirectToLogin('login.html')">Keluar</button>
+            </div>
+        </nav>
+    </header>
+
+    <section id="sidebar">
+        <div class="img" style="padding: 35px;">
+            <a href="Home.html"><img src="assets/global/logo.png" alt="logo" class="logosma"></a>
+            <div class="namasma">
+            <h4>SMA NEGERI 12 <br> BANDAR LAMPUNG</h4>
+            </div> 
+        </div>
+           
+        <div class="kotak1">
+        <a href="dashboard.html" style="text-decoration:none ; width: 30px;">
+        <img src="assets/dashboard/Speedometer.png" alt="dashboard">
+        <p>Dashboard</p>
+        </a>
+        <div class="menu-content">
+            <!-- Konten Dashboard di sini -->
+        </div>
+    </div>
+        <div class="kotak2">
+        <a href="buku.html" style="text-decoration: none; width: 30px;">
+        <img src="assets/dashboard/Book Shelf.png" alt="buku">
+        <p>Buku</p>
+        <div class="menu-content">
+        </a>
+            <!-- Konten Buku di sini -->
+        </div>
+    </div>
+    <div class="kotak3">
+        <a href="vpeminjaman.html" style="text-decoration: none; width: 30px;">
+        <img src="assets/dashboard/Return Book (1).png" alt="peminjaman">
+        <p>Peminjaman</p>
+        <div class="menu-content">
+        </a>
+            <!-- Konten Peminjaman di sini -->
+        </div>
+    </div>
+    <div class="kotak4">
+        <a href="vpengembalian.html" style="text-decoration: none; width: 30px;">
+        <img src="assets/dashboard/Return Book.png" alt="pengembalian">
+        <p>Pengembalian</p>
+        </a>
+        <div class="menu-content">
+            <!-- Konten Pengembalian di sini -->
+        </div>
+    </div>
+    <div class="kotak5">
+        <a href="denda.html" style="text-decoration: none; width: 30px;">
+        <img src="assets/dashboard/Stack of Coins.png" alt="denda">
+        <p>Denda</p>
+        </a>
+        <div class="menu-content">
+            <!-- Konten Denda di sini -->
+        </div>
+    </div>
+    <div class="kotak6">
+        <a href="pengaturan.html" style="text-decoration: none; width: 30px;">
+        <img src="assets/dashboard/Gear.png" alt="pengaturan">
+        <p>Pengaturan</p>
+        </a>
+        <div class="menu-content">
+            <!-- Konten Pengaturan di sini -->
+        </div>
+    </div>
+    </section>
+    
+    <section id="content" >
+        <main>
+            <div class="head-title">
+                <div class="left">
+                <h3>Dashboard </h3>
+                </div>
+            </div>
+            <div class="table-data" style="box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 1);;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Stok Buku</th>
+                            <th>Anggota</th>
+                            
+                        </tr>
+                    <tbody>
+                        <tr>
+                            <td><i class='bx bxs-bookmarks'></i> 300 Buku</td>
+                            <td><i class='bx bxs-group'></i> 200 Anggota </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </section>
+
+    <section id="content" >
+        <main>
+            <div class="head-title">
+                <div class="left">
+                <h3>Laporan ...</h3>
+                </div>
+            </div>
+            <div class="table-data" style="box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 1);;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Peminjaman</th>
+                            <th>Pengembalian</th>
+                            <th>Total Denda</th>
+                        </tr>
+                    <tbody>
+                            <td>30 Buku</td>
+                            <td>29 Buku</td>
+                            <td>Rp30.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </section>
+
+    <script>
+        function togglePopup(popupId) {
+            var popup = document.getElementById(popupId);
+            if (popup.style.display === "block") {
+                popup.style.display = "none";
+            } else {
+                popup.style.display = "block";
+            }
+        }
+
+        function redirectToLogin(url) {
+            window.location.href = url;
+        }
+
+        
+    </script>
+
+</body>
+</html>
